@@ -9,7 +9,7 @@
 // 9 5 3 2
 // 8 4 4 2
 
-int[,] InputMatrix() // сдесь мы создаём матрицу
+int[,] InputMatrix() // создаём матрицу
 {
     Console.Write("введите размер матрицы: ");
     int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
@@ -31,17 +31,17 @@ void ReleaseMatrix(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            int max = j;                                        // сдесь мы сортируем строку в матрице
-            for (int n = j + 1; n < matrix.GetLength(1); n++)   // перебераем все элементы в строке
+            int max = j;                                        // сортируем строку в матрице
+            for (int n = j + 1; n < matrix.GetLength(1); n++)   // перебираем все элементы в строке
             {
                 if (matrix[i, n] > matrix[i, max])              // если элемент в строке больше принятого нами самого больщого эл.
                     max = n;
             }
-            int temprary = matrix[i, j];                        // сдесь меняем местами новый максимум со старым
+            int temprary = matrix[i, j];                        // меняем местами новый максимум со старым
             matrix[i, j] = matrix[i, max];
             matrix[i, max] = temprary;
-        }                                                      // продолжаем пока не кончится строка
-    }                                                          // продолжаем пока не кончатся все строки 
+        }                                                      // продолжаем пока не закончится строка
+    }                                                          // продолжаем пока не закончатся все строки 
 }
 void PrintMatrix(int[,] matrix)                                // выводим получившуюся матрицу
 {
