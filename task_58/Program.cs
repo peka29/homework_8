@@ -16,14 +16,14 @@ int[,] InputMatrix1() // создаём матрицу 1
     {
         for (int j = 0; j < matrix1.GetLength(1); j++)
         {
-            matrix1[i, j] = new Random().Next(1, 10); ;
+            matrix1[i, j] = new Random().Next(1, 10); 
             Console.Write($"{matrix1[i, j]}\t");
         }
         Console.WriteLine();
     }
     return matrix1;
 }
-int[,] InputMatrix2() // создаём матрицу 2
+int[,] InputMatrix2() //  создаём матрицу 2
 {
     Console.Write("введите размер второй матрицы матрицы: ");
     int[] size = Console.ReadLine().Split(" ").Select(x => int.Parse(x)).ToArray();
@@ -51,8 +51,10 @@ void MultiplicationMatrix(int[,] matrix1, int[,] matrix2)
         {
             for (int n = 0; n < matrix1.GetLength(0); n++) // количество строк 1 матрицы определяет полученную матрицу
             {
-                result[i,j] += matrix1[i, n]*matrix2[n, j];     // формула произведения матрицы           
-            }            
+                result[i,j] += matrix1[i, n]*matrix2[n, j];  // формула произведения матрицы
+                             
+            }  
+            Console.Write($"{result[i, j]}\t");           
         }
         Console.WriteLine();
     }
